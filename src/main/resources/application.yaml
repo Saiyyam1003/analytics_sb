@@ -23,3 +23,8 @@ management:
 logging:
   level:
     com.example.analytics: DEBUG
+
+
+transaction.service.url: ${TRANSACTION_SERVICE_URL}
+bill.service.url: ${BILL_SERVICE_URL}
+budget.service.url:${BUDGET_SERVICE_URL}

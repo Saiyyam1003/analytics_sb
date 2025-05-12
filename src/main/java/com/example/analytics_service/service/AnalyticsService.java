@@ -7,6 +7,7 @@ import com.example.analytics_service.dto.TransactionDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,9 +19,12 @@ import java.util.Map;
 @Service
 public class AnalyticsService {
     private static final Logger logger = LoggerFactory.getLogger(AnalyticsService.class);
-    private static final String TRANSACTION_URL = "http://localhost:8081/api/transactions";
-    private static final String BUDGET_URL = "http://localhost:8082/api/budgets";
-    private static final String BILL_URL = "http://localhost:8083/api/bills";
+    @Value("${bill.service.url}")
+    private String BILL_SERVICE_URL;
+    @Value("${transaction.service.url}")
+    private String TRANSACTION_SERVICE_URL;
+    @Value("${budget.service.url}")
+    private String BUDGET_SERVICE_URL;
 
     @Autowired
     private RestTemplate restTemplate;
