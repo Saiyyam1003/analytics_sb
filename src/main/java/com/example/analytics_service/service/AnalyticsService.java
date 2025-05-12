@@ -19,12 +19,12 @@ import java.util.Map;
 @Service
 public class AnalyticsService {
     private static final Logger logger = LoggerFactory.getLogger(AnalyticsService.class);
-    @Value("${bill.service.url}")
-    private String BILL_SERVICE_URL;
-    @Value("${transaction.service.url}")
-    private String TRANSACTION_SERVICE_URL;
-    @Value("${budget.service.url}")
-    private String BUDGET_SERVICE_URL;
+    @Value("${bill.url}")
+    private String BILL_URL;
+    @Value("${transaction.url}")
+    private String TRANSACTION_URL;
+    @Value("${budget.url}")
+    private String BUDGET_URL;
 
     @Autowired
     private RestTemplate restTemplate;
